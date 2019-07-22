@@ -21,7 +21,13 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    @student.update()
+    @student.update(student_params)
     redirect_to student_path(@student)
   end
+
+  private
+  def student_params
+    params.require(:student).permit(:first_name, :last_name)
+  end
+
 end
