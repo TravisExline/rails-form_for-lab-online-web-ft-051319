@@ -28,3 +28,4 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:first_name, :last_name)
   end
 end
+end
